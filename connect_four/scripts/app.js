@@ -8,7 +8,18 @@ $(() => {
   };
 
   for (i = 0; i < 42; i++) {
-    console.log(i);
     makeTiles();
   }
+
+  $(".tile").on("click", function () {
+    console.log("div clicked");
+    redTurn();
+  });
+
+  const redTurn = () => {
+    $(event.currentTarget).css(
+      "background",
+      "radial-gradient(red 50%, yellow 50%)"
+    );
+  };
 });
