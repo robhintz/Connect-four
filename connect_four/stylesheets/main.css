@@ -5,7 +5,7 @@ body {
 .board {
   height: 75%;
   width: 75%;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: yellow;
   position: fixed;
   /* pushes sqare top and left 50% distance from edge of screen */
   top: 50%;
@@ -15,6 +15,10 @@ body {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
 }
-.tile {
-  background: radial-gradient(rgba(0, 0, 0, 0) 50%, yellow 50%);
+
+.column {
+  background-color: whitesmoke;
+  height: 16%;
+  border-radius: 50%;
+  margin: 5px;
 }
