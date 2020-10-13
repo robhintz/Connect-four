@@ -35,8 +35,48 @@ $(() => {
       }
     }
 
-    //check if human won
-
+    /////////////////check if human won\\\\\\\\\\\\
+    for (let i = 0; i < board.length; i++) {
+      for (j = 0; j < rows; j++) {
+        let currentPiece = board[i][j];
+        //vertical win
+        if (
+          board[i][j] === "red" &&
+          board[i][j + 1] === "red" &&
+          board[i][j + 2] === "red" &&
+          board[i][j + 3] === "red"
+        ) {
+          console.log("you win vertical");
+        }
+        // horizontal win
+        if (
+          i < 4 &&
+          board[i][j] === "red" &&
+          board[i + 1][j] === "red" &&
+          board[i + 2][j] === "red" &&
+          board[i + 3][j] === "red"
+        ) {
+          console.log("you win horizontal");
+        }
+        // diagonal win
+        if (
+          board[i][j] === "red" &&
+          board[i + 1][j + 1] === "red" &&
+          board[i + 2][j + 2] === "red" &&
+          board[i + 3][j + 3] === "red"
+        ) {
+          console.log("you win diagnol down right & up left");
+        }
+        if (
+          board[i][j] === "red" &&
+          board[i + 1][j - 1] === "red" &&
+          board[i + 2][j - 2] === "red" &&
+          board[i + 3][j - 3] === "red"
+        ) {
+          console.log("you win diagnol another way");
+        }
+      }
+    }
     ////////////////make AI move\\\\\\\\\\\\\\\\\\\\\\
     let AIChoice = Math.floor(Math.random() * Math.floor(7));
     let AIcolumn = board[AIChoice];
@@ -48,10 +88,14 @@ $(() => {
           .eq(i)
           .css("background-color", "black");
         AIcolumn[i] = "black";
+        // console.log(AIcolumn);
+        break;
+      } else if (AIcolumn[0] !== "empty") {
+        console.log(AIcolumn[0]);
+        console.log("AI makes bad choices");
         break;
       }
     }
-
     // console.log(AIChoice);
     //check if AI won
   });
