@@ -38,9 +38,9 @@ $(() => {
     /////////////////check if human won\\\\\\\\\\\\
     for (let i = 0; i < board.length; i++) {
       for (j = 0; j < rows; j++) {
-        let currentPiece = board[i][j];
         //vertical win
         if (
+          j < 3 &&
           board[i][j] === "red" &&
           board[i][j + 1] === "red" &&
           board[i][j + 2] === "red" &&
@@ -60,6 +60,8 @@ $(() => {
         }
         // diagonal win
         if (
+          i < 4 &&
+          j < 3 &&
           board[i][j] === "red" &&
           board[i + 1][j + 1] === "red" &&
           board[i + 2][j + 2] === "red" &&
@@ -68,6 +70,8 @@ $(() => {
           console.log("you win diagnol down right & up left");
         }
         if (
+          i < 4 &&
+          j > 3 &&
           board[i][j] === "red" &&
           board[i + 1][j - 1] === "red" &&
           board[i + 2][j - 2] === "red" &&
@@ -96,6 +100,7 @@ $(() => {
         break;
       }
     }
+
     // console.log(AIChoice);
     //check if AI won
   });
