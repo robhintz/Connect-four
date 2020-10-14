@@ -31,11 +31,12 @@ $(() => {
       //if player chooses a full column
       else if (column[0] !== "empty") {
         alert("column full, please make a valid move");
-        Playermove();
+        return;
       }
     }
 
     /////////////////check if human won\\\\\\\\\\\\
+
     for (let i = 0; i < board.length; i++) {
       for (j = 0; j < rows; j++) {
         //vertical win
@@ -58,7 +59,7 @@ $(() => {
         ) {
           console.log("you win horizontal");
         }
-        // diagonal win
+        // diagonal wins
         if (
           i < 4 &&
           j < 3 &&
@@ -81,27 +82,34 @@ $(() => {
         }
       }
     }
-    ////////////////make AI move\\\\\\\\\\\\\\\\\\\\\\
-    let AIChoice = Math.floor(Math.random() * Math.floor(7));
-    let AIcolumn = board[AIChoice];
-    for (let i = AIcolumn.length - 1; i >= 0; i--) {
-      if (AIcolumn[i] === "empty") {
-        // console.log("it works");
-        $("[columnindex='" + AIChoice + "']")
-          .children()
-          .eq(i)
-          .css("background-color", "black");
-        AIcolumn[i] = "black";
-        // console.log(AIcolumn);
-        break;
-      } else if (AIcolumn[0] !== "empty") {
-        console.log(AIcolumn[0]);
-        console.log("AI makes bad choices");
-        break;
-      }
-    }
 
+    //Check for draw
+
+    ////////////////make AI move\\\\\\\\\\\\\\\\\\\\\\
+    const AIMove = () => {
+      let AIChoice = Math.floor(Math.random() * Math.floor(7));
+      let AIcolumn = board[AIChoice];
+      for (let i = AIcolumn.length - 1; i >= 0; i--) {
+        if (AIcolumn[i] === "empty") {
+          // console.log("it works");
+          $("[columnindex='" + AIChoice + "']")
+            .children()
+            .eq(i)
+            .css("background-color", "black");
+          AIcolumn[i] = "black";
+          // console.log(AIcolumn);
+          break;
+        } else if (AIcolumn[0] !== "empty") {
+          // console.log(AIcolumn[0]);
+          console.log("AI makes bad choices");
+          AIMove();
+          break;
+        }
+      }
+    };
     // console.log(AIChoice);
     //check if AI won
+
+    AIMove();
   });
 });
