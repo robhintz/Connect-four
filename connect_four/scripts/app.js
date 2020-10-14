@@ -3,17 +3,21 @@ $(() => {
   let rows = 6;
   let board = new Array(columns);
 
-  for (i = 0; i < board.length; i++) {
-    board[i] = new Array(rows);
-    const $colDiv = $("<div>").addClass("column").attr("columnIndex", i);
-    $(".board").append($colDiv);
+  const makeBoard = () => {
+    for (i = 0; i < board.length; i++) {
+      board[i] = new Array(rows);
+      const $colDiv = $("<div>").addClass("column").attr("columnIndex", i);
+      $(".board").append($colDiv);
 
-    for (j = 0; j < rows; j++) {
-      board[i][j] = "empty";
-      const $rowDiv = $("<div>").addClass("row");
-      $colDiv.append($rowDiv);
+      for (j = 0; j < rows; j++) {
+        board[i][j] = "empty";
+        const $rowDiv = $("<div>").addClass("row");
+        $colDiv.append($rowDiv);
+      }
     }
-  }
+  };
+
+  makeBoard();
 
   /////////////////Player move\\\\\\\\\\\\\\\\\\\\\\\\\
   $(".column").on("click", function Playermove(e) {
