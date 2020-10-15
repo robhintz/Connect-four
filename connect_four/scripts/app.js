@@ -204,4 +204,7 @@ $(() => {
   const defeatModal = () => {
     $(".defeat").toggleClass("hidden");
   };
+  const drawModal = () => {
+    $(".draw").toggleClass("hidden");
+  };
 });
