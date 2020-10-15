@@ -19,7 +19,7 @@ $(() => {
 
     /////////////////Player move\\\\\\\\\\\\\\\\\\\\\\\\\
     $(".column").on("click", function Playermove(e) {
-      console.log("click");
+      // console.log("click");
       // console.log(board);
       let columnIndex = $(e.currentTarget).attr("columnIndex");
       // console.log(columnIndex);
@@ -51,6 +51,7 @@ $(() => {
             board[i][j + 3] === "red"
           ) {
             console.log("you win vertical");
+            toggleModal();
           }
           // horizontal win
           if (
@@ -61,6 +62,7 @@ $(() => {
             board[i + 3][j] === "red"
           ) {
             console.log("you win horizontal");
+            toggleModal();
           }
           // diagonal wins
           if (
@@ -72,6 +74,7 @@ $(() => {
             board[i + 3][j + 3] === "red"
           ) {
             console.log("you win diagnol down right & up left");
+            toggleModal();
           }
           if (
             i < 4 &&
@@ -82,6 +85,7 @@ $(() => {
             board[i + 3][j - 3] === "red"
           ) {
             console.log("you win diagnol another way");
+            toggleModal();
           }
         }
       }
@@ -177,8 +181,13 @@ $(() => {
   makeBoard();
 
   $(".reset").on("click", function () {
-    console.log("fuck");
+    console.log("reset");
     $(".column").remove();
+    toggleModal();
     makeBoard();
   });
+
+  const toggleModal = () => {
+    $(".modal").toggleClass("hidden");
+  };
 });
