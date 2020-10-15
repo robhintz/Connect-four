@@ -1,12 +1,12 @@
 body {
-  /* background-color: white; */
+  /* background-color: yellow; */
   background-image: url("../Photos/cloudsfreestockphoto.jpg");
 }
 
 .board {
   height: 75%;
   width: 75%;
-  background-color: yellow;
+  /* background-color: yellow; */
   position: fixed;
   /* pushes sqare top and left 50% distance from edge of screen */
   top: 50%;
@@ -18,11 +18,15 @@ body {
 }
 
 .row {
-  /* background-color: gray; */
-  background-color: rgba(25, 25, 25, 0.1);
+  background: radial-gradient(
+    circle,
+    rgba(25, 25, 25, 0) 50%,
+    rgba(255, 255, 0, 1) 50%
+  );
   height: 16%;
-  border-radius: 50%;
-  margin: 5px;
+  /* background-color: rgba(25, 25, 25, 0.1); */
+  /* border-radius: 50%; */
+  /* margin: 5px; */
 }
 
 .red {
