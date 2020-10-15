@@ -124,57 +124,58 @@ $(() => {
             break;
           }
         }
-      };
-      // console.log(AIChoice);
-
-      for (let m = 0; m < board.length; m++) {
-        for (n = 0; n < rows; n++) {
-          //vertical win
-          if (
-            m < 3 &&
-            board[m][n] === "black" &&
-            board[m][n + 1] === "black" &&
-            board[m][n + 2] === "black" &&
-            board[m][n + 3] === "black"
-          ) {
-            console.log("AI win vertical");
-          }
-          // horizontal win
-          if (
-            m < 4 &&
-            board[m][n] === "black" &&
-            board[m + 1][n] === "black" &&
-            board[m + 2][n] === "black" &&
-            board[m + 3][n] === "black"
-          ) {
-            console.log("AI win horizontal");
-          }
-          // diagonal wins
-          if (
-            m < 4 &&
-            n < 3 &&
-            board[m][n] === "black" &&
-            board[m + 1][n + 1] === "black" &&
-            board[m + 2][n + 2] === "black" &&
-            board[m + 3][n + 3] === "black"
-          ) {
-            console.log("AI win diagnol down right & up left");
-          }
-          if (
-            m < 4 &&
-            n > 3 &&
-            board[m][n] === "black" &&
-            board[m + 1][n - 1] === "black" &&
-            board[m + 2][n - 2] === "black" &&
-            board[m + 3][n - 3] === "black"
-          ) {
-            console.log("AI win diagnol another way");
+        /////////////////check if AI won\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        for (let m = 0; m < board.length; m++) {
+          for (n = 0; n < rows; n++) {
+            //vertical win
+            if (
+              n < 3 &&
+              board[m][n] === "black" &&
+              board[m][n + 1] === "black" &&
+              board[m][n + 2] === "black" &&
+              board[m][n + 3] === "black"
+            ) {
+              console.log("AI win vertical");
+              defeatModal();
+            }
+            // horizontal win
+            if (
+              m < 4 &&
+              board[m][n] === "black" &&
+              board[m + 1][n] === "black" &&
+              board[m + 2][n] === "black" &&
+              board[m + 3][n] === "black"
+            ) {
+              console.log("AI win horizontal");
+              defeatModal();
+            }
+            // diagonal wins
+            if (
+              m < 4 &&
+              n < 3 &&
+              board[m][n] === "black" &&
+              board[m + 1][n + 1] === "black" &&
+              board[m + 2][n + 2] === "black" &&
+              board[m + 3][n + 3] === "black"
+            ) {
+              console.log("AI win diagnol down right & up left");
+              defeatModal();
+            }
+            if (
+              m < 4 &&
+              n > 3 &&
+              board[m][n] === "black" &&
+              board[m + 1][n - 1] === "black" &&
+              board[m + 2][n - 2] === "black" &&
+              board[m + 3][n - 3] === "black"
+            ) {
+              defeatModal();
+              console.log("AI win diagnol another way");
+            }
           }
         }
-      }
-
-      //check if AI won
-
+      };
+      // console.log(AIChoice);
       AIMove();
     });
   };
@@ -183,11 +184,19 @@ $(() => {
   $(".reset").on("click", function () {
     console.log("reset");
     $(".column").remove();
-    toggleModal();
+    if (!$(".modal").hasClass("hidden")) {
+      toggleModal();
+    }
+    if (!$(".defeat").hasClass("hidden")) {
+      defeatModal();
+    }
     makeBoard();
   });
 
   const toggleModal = () => {
     $(".modal").toggleClass("hidden");
+  };
+  const defeatModal = () => {
+    $(".defeat").toggleClass("hidden");
   };
 });
