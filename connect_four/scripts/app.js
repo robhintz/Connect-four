@@ -17,29 +17,8 @@ $(() => {
       }
     }
 
-    /////////////////Player move\\\\\\\\\\\\\\\\\\\\\\\\\
-    $(".column").on("click", function Playermove(e) {
-      // console.log("click");
-      // console.log(board);
-      let columnIndex = $(e.currentTarget).attr("columnIndex");
-      // console.log(columnIndex);
-      let column = board[columnIndex];
-      for (let i = column.length - 1; i >= 0; i--) {
-        if (column[i] === "empty") {
-          // console.log("it works");
-          $(e.currentTarget).children().eq(i).css("background-color", "red");
-          column[i] = "red";
-          break;
-        }
-        //if player chooses a full column
-        else if (column[0] !== "empty") {
-          alert("column full, please make a valid move");
-          return;
-        }
-      }
-
-      /////////////////check if human won\\\\\\\\\\\\
-
+    /////////////////check if human won\\\\\\\\\\\\
+    const checkPlayerWin = () => {
       for (let i = 0; i < board.length; i++) {
         for (j = 0; j < rows; j++) {
           //vertical win
@@ -87,6 +66,29 @@ $(() => {
             console.log("you win diagnol another way");
             toggleModal();
           }
+        }
+      }
+    };
+
+    /////////////////Player move\\\\\\\\\\\\\\\\\\\\\\\\\
+    $(".column").on("click", function Playermove(e) {
+      // console.log("click");
+      // console.log(board);
+      let columnIndex = $(e.currentTarget).attr("columnIndex");
+      // console.log(columnIndex);
+      let column = board[columnIndex];
+      for (let i = column.length - 1; i >= 0; i--) {
+        if (column[i] === "empty") {
+          // console.log("it works");
+          $(e.currentTarget).children().eq(i).css("background-color", "red");
+          column[i] = "red";
+          checkPlayerWin();
+          break;
+        }
+        //if player chooses a full column
+        else if (column[0] !== "empty") {
+          alert("column full, please make a valid move");
+          return;
         }
       }
 
