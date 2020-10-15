@@ -176,7 +176,7 @@ $(() => {
             checkDraw.push(board[k][l]);
           }
           if (checkDraw.length === 41) {
-            alert("alert this game is a scratch");
+            drawModal();
           }
         }
       }
