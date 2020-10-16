@@ -152,14 +152,10 @@ $(() => {
 
     /////////////////Player move\\\\\\\\\\\\\\\\\\\\\\\\\
     $(".column").on("click", function Playermove(e) {
-      // console.log("click");
-      // console.log(board);
       let columnIndex = $(e.currentTarget).attr("columnIndex");
-      // console.log(columnIndex);
       let column = board[columnIndex];
       for (let i = column.length - 1; i >= 0; i--) {
         if (column[i] === "empty") {
-          // console.log("it works");
           $(e.currentTarget).children().eq(i).css("background-color", "red");
           column[i] = "red";
           checkPlayerWin();
@@ -171,7 +167,6 @@ $(() => {
           return;
         }
       }
-      // console.log(AIChoice);
     });
   };
   clearBoard();

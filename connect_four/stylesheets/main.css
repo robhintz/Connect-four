@@ -13,12 +13,9 @@ h1 {
 .board {
   height: 75%;
   width: 75%;
-  /* background-color: yellow; */
   position: fixed;
-  /* pushes sqare top and left 50% distance from edge of screen */
   top: 50%;
   left: 50%;
-  /* a confusing function I'm using to in conjuction with top & left to center the cener of the board in the middle of the screen, I think it's telling css to move 50% into the x and y axis of my box and use that as it's starting point */
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
@@ -32,9 +29,6 @@ h1 {
   );
   margin: -1px;
   height: 16%;
-  /* background-color: rgba(25, 25, 25, 0.1); */
-  /* border-radius: 50%; */
-  /* margin: 5px; */
 }
 
 .modal {
@@ -45,7 +39,6 @@ h1 {
   height: 72%;
   width: 76%;
   display: flex;
-  /* justify-content: center; */
   background-color: rgba(0, 0, 0, 0.75);
   color: white;
   font-size: 500%;
@@ -58,6 +51,11 @@ h1 {
   height: 10%;
   width: 15%;
   margin-top: 25%;
+}
+
+.help {
+  position: relative;
+  margin-top: 100%;
 }
 
 .text {
