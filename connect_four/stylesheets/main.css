@@ -14,7 +14,7 @@ h1 {
 /* solution to connect four text dispearing behind board found here: */
 /* https://stackoverflow.com/questions/16056591/font-scaling-based-on-width-of-container */
 .test {
-  font-size: calc(5vh + 5vw);
+  font-size: calc(3vh + 3vw);
 }
 
 .board {
