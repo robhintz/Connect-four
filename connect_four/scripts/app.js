@@ -245,6 +245,29 @@ $(() => {
 
   ////////////////////////////////// function make AI move\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
   const AIMove = () => {
+    let AIBlockWin = () => {
+      for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < rows; j++) {
+          if (
+            j < 3 &&
+            board[i][j] === "empty" &&
+            board[i][j + 1] === "red" &&
+            board[i][j + 2] === "red" &&
+            board[i][j + 3] === "red"
+          ) {
+            $("[columnindex='" + i + "']")
+              .children()
+              .eq(j)
+              .css("background-color", "black");
+            board[i][j] = "black";
+            console.log("wining move blocked");
+            return true;
+          }
+        }
+      }
+      return false;
+    };
+
     const AIVerticalWin = () => {
       for (let i = 0; i < board.length; i++) {
         for (let j = 0; j < rows; j++) {
@@ -288,11 +311,15 @@ $(() => {
         }
       }
     };
+    //
 
-    if (AIVerticalWin() === true) {
+    //test if Vertical win is true
+    if (AIBlockWin() === true) {
+    } else if (AIVerticalWin() === true) {
     } else {
       AIRandomMove();
     }
+    //
 
     /////////check if AI won\\\\\\\\\\\\\\\\\\\
     for (let m = 0; m < board.length; m++) {
