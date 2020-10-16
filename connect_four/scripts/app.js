@@ -32,7 +32,7 @@ $(() => {
             console.log("you win vertical");
             toggleModal();
           }
-          // horizontal win
+          // horizontal wins
           if (
             i < 4 &&
             board[i][j] === "red" &&
@@ -40,10 +40,33 @@ $(() => {
             board[i + 2][j] === "red" &&
             board[i + 3][j] === "red"
           ) {
-            console.log("you win horizontal");
             toggleModal();
           }
-          // diagonal wins
+          if (
+            i < 3 &&
+            board[i][j] === "red" &&
+            board[i + 1][j] === "red" &&
+            board[i + 2][j] === "red" &&
+            board[i + 3][j] === "red" &&
+            board[i + 4][j] === "red"
+          ) {
+            console.log("bruh");
+            toggleModal();
+          }
+          if (
+            i < 2 &&
+            board[i][j] === "red" &&
+            board[i + 1][j] === "red" &&
+            board[i + 2][j] === "red" &&
+            board[i + 3][j] === "red" &&
+            board[i + 4][j] === "red" &&
+            board[i + 5][j] === "red"
+          ) {
+            console.log("dang");
+            toggleModal();
+          }
+          //
+          //Diagonal wins
           if (
             i < 4 &&
             j < 3 &&
@@ -55,6 +78,34 @@ $(() => {
             console.log("you win diagnol down right & up left");
             toggleModal();
           }
+          //
+          if (
+            i < 3 &&
+            j < 2 &&
+            board[i][j] === "red" &&
+            board[i + 1][j + 1] === "red" &&
+            board[i + 2][j + 2] === "red" &&
+            board[i + 3][j + 3] === "red" &&
+            board[i + 4][j + 4] === "red"
+          ) {
+            console.log("you win 5 diagnol down right & up left");
+            toggleModal();
+          }
+          //
+          if (
+            i < 2 &&
+            j < 1 &&
+            board[i][j] === "red" &&
+            board[i + 1][j + 1] === "red" &&
+            board[i + 2][j + 2] === "red" &&
+            board[i + 3][j + 3] === "red" &&
+            board[i + 4][j + 4] === "red" &&
+            board[i + 5][j + 5] === "red"
+          ) {
+            console.log("you win connect 6 diagnol");
+            toggleModal();
+          }
+          //
           if (
             i < 4 &&
             j > 3 &&
@@ -63,7 +114,33 @@ $(() => {
             board[i + 2][j - 2] === "red" &&
             board[i + 3][j - 3] === "red"
           ) {
+            //other diagonal wins
             console.log("you win diagnol another way");
+            toggleModal();
+          }
+          if (
+            i < 3 &&
+            j > 2 &&
+            board[i][j] === "red" &&
+            board[i + 1][j - 1] === "red" &&
+            board[i + 2][j - 2] === "red" &&
+            board[i + 3][j - 3] === "red" &&
+            board[i + 4][j - 4] === "red"
+          ) {
+            console.log("diagonal connect 5 the other way");
+            toggleModal();
+          }
+          if (
+            i < 3 &&
+            j > 1 &&
+            board[i][j] === "red" &&
+            board[i + 1][j - 1] === "red" &&
+            board[i + 2][j - 2] === "red" &&
+            board[i + 3][j - 3] === "red" &&
+            board[i + 4][j - 4] === "red" &&
+            board[i + 5][j - 5] === "red"
+          ) {
+            console.log("diagonal connect 6 the other way");
             toggleModal();
           }
         }
