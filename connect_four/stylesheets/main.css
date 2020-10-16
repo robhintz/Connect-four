@@ -6,8 +6,15 @@ body {
 }
 
 h1 {
+  position: relative;
   text-align: center;
-  font-size: 300%;
+  font-size: 100%;
+}
+
+/* solution to connect four text dispearing behind board found here: */
+/* https://stackoverflow.com/questions/16056591/font-scaling-based-on-width-of-container */
+.test {
+  font-size: calc(5vh + 5vw);
 }
 
 .board {
