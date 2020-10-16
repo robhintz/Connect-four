@@ -39,11 +39,11 @@ h1 {
 
 .modal {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 75%;
-  width: 75%;
+  height: 72%;
+  width: 76%;
   display: flex;
   /* justify-content: center; */
   background-color: rgba(0, 0, 0, 0.75);
@@ -52,6 +52,8 @@ h1 {
 }
 
 .reset {
+  top: 10%;
+  right: 33.33%;
   position: relative;
   height: 10%;
   width: 15%;
@@ -65,11 +67,11 @@ h1 {
 
 .defeat {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 75%;
-  width: 75%;
+  height: 72%;
+  width: 76%;
   display: flex;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.75);
@@ -79,11 +81,11 @@ h1 {
 
 .draw {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 75%;
-  width: 75%;
+  height: 72%;
+  width: 76%;
   display: flex;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.75);
