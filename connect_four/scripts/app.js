@@ -276,7 +276,9 @@ $(() => {
           board[m][n + 3] === "black"
         ) {
           console.log("AI win vertical");
-          defeatModal();
+          if (!$(".defeat").hasClass("hidden")) {
+            defeatModal();
+          }
         }
         // horizontal win
         if (
@@ -287,7 +289,9 @@ $(() => {
           board[m + 3][n] === "black"
         ) {
           console.log("AI win horizontal");
-          defeatModal();
+          if (!$(".defeat").hasClass("hidden")) {
+            defeatModal();
+          }
         }
         // diagonal wins
         if (
@@ -299,7 +303,9 @@ $(() => {
           board[m + 3][n + 3] === "black"
         ) {
           console.log("AI win diagnol down right & up left");
-          defeatModal();
+          if (!$(".defeat").hasClass("hidden")) {
+            defeatModal();
+          }
         }
         if (
           m < 4 &&
@@ -309,7 +315,9 @@ $(() => {
           board[m + 2][n - 2] === "black" &&
           board[m + 3][n - 3] === "black"
         ) {
-          defeatModal();
+          if (!$(".defeat").hasClass("hidden")) {
+            defeatModal();
+          }
           console.log("AI win diagnol another way");
         }
       }
