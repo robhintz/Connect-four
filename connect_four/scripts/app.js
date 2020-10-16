@@ -30,7 +30,9 @@ $(() => {
             board[i][j + 3] === "red"
           ) {
             console.log("you win vertical");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           // horizontal wins
           if (
@@ -40,7 +42,9 @@ $(() => {
             board[i + 2][j] === "red" &&
             board[i + 3][j] === "red"
           ) {
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           if (
             i < 3 &&
@@ -51,7 +55,9 @@ $(() => {
             board[i + 4][j] === "red"
           ) {
             console.log("bruh");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           if (
             i < 2 &&
@@ -63,7 +69,9 @@ $(() => {
             board[i + 5][j] === "red"
           ) {
             console.log("dang");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           //
           //Diagonal wins
@@ -76,7 +84,9 @@ $(() => {
             board[i + 3][j + 3] === "red"
           ) {
             console.log("you win diagnol down right & up left");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           //
           if (
@@ -89,7 +99,9 @@ $(() => {
             board[i + 4][j + 4] === "red"
           ) {
             console.log("you win 5 diagnol down right & up left");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           //
           if (
@@ -103,7 +115,9 @@ $(() => {
             board[i + 5][j + 5] === "red"
           ) {
             console.log("you win connect 6 diagnol");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           //
           if (
@@ -116,7 +130,9 @@ $(() => {
           ) {
             //other diagonal wins
             console.log("you win diagnol another way");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           if (
             i < 3 &&
@@ -128,7 +144,9 @@ $(() => {
             board[i + 4][j - 4] === "red"
           ) {
             console.log("diagonal connect 5 the other way");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
           if (
             i < 3 &&
@@ -141,7 +159,9 @@ $(() => {
             board[i + 5][j - 5] === "red"
           ) {
             console.log("diagonal connect 6 the other way");
-            toggleModal();
+            if ($(".modal").hasClass("hidden")) {
+              toggleModal();
+            }
           }
         }
       }
