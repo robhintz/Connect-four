@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+  color: whitesmoke;
+}
+
+a:link {
+  color: black;
+}
+a:visited {
+  color: darkgray;
+}
+
+.headerBackground {
+  padding: 15px;
+  margin: -16px;
+  background-color: #0080ff;
+}
+.contact {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.body {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.icon {
+  margin: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer {
+  background-color: #292929;
+  padding: 15px;
+  margin: -15px;
+  color: gray;
+}
+
+.button {
+  background-color: #0080ff;
+  color: whitesmoke;
+  padding: 5px;
+  border-radius: 5%;
+}
+
+.smallMargin {
+  padding: 5px;
+}
